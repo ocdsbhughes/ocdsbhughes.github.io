@@ -32,7 +32,7 @@ function draw() {
   //If collision, game over
   if (hit===true) {
       background(255,0,0);
-      play=true;
+      mySound.play();
   }
 
   else {
@@ -53,11 +53,5 @@ function draw() {
     if (x2>width || x2<0) {
       x2Speed*=-1;
     }
-  }
-
-  if (play=true) {
-    mySound.play();
-    play=false;
-
   }
 }

@@ -9,6 +9,8 @@ let x2Speed=5;
 //Assume object have NOT collided
 let hit = false;
 
+let play = false;
+
 function preload() {
  mySound = loadSound('explosion.mp3');
 }
@@ -30,7 +32,7 @@ function draw() {
   //If collision, game over
   if (hit===true) {
       background(255,0,0);
-      mySound.play();
+      play=true;
   }
 
   else {
@@ -51,5 +53,11 @@ function draw() {
     if (x2>width || x2<0) {
       x2Speed*=-1;
     }
+  }
+
+  if (play=true) {
+    mySound.play();
+    play=false;
+
   }
 }

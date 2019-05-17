@@ -11,14 +11,17 @@ function preload() {
 
   //Assign all cards to an array
   for (let i=0; i<20; i++) {
-    cardArray[i] = loadImage('./images/AroundTheWorld_Card_'+i+'.jpg')
-    print('yeh!')
+    if (i<9)
+      cardArray[i] = loadImage('./images/AroundTheWorld_Card_0'+(i+1)+'.jpg')
+    else
+      cardArray[i] = loadImage('./images/AroundTheWorld_Card_'+(i+1)+'.jpg')
+   
   }
 }
 
 function setup() {
   //Create the canvas
-  createCanvas(1275,1650)
+  createCanvas(1200,1000)
 }
 
 function draw() {
@@ -32,11 +35,14 @@ function draw() {
     background(255);
     image(cardArray[randCard],0,0);
   }
+
+  fill(0);
+  textSize(32);
+  text('CLICK TO GET A RANDOM CARD', 0, 800);
 }
 
 //Update the card on mouse press
 function mousePressed() {
-  randCard = floor(random(possibleCards.length));
+  randCard = floor(random(cardArray.length));
   print(randCard+"test")
 }
-*/

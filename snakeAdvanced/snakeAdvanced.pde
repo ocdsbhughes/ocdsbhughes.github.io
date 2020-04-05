@@ -102,6 +102,11 @@ void draw() {
   
      
   }//end else
+  
+  //DISPLAY THE SCORE
+  textSize(32);
+  text("SCORE:", 500, 30); 
+  text(score, 650,30);
 }//end draw
  
 //KEY COMMANDS 
@@ -124,11 +129,7 @@ void keyPressed() {
   }
  }
  
- //DISPLAY THE SCORE
- textSize(32);
- text("SCORE:", 500, 30); 
- text(score, 500,60);
- 
+
  //RESTART THE GAME AFTER LOSS
  void mouseReleased() {
    if (lose==true)

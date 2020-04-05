@@ -20,11 +20,6 @@ boolean lose = false; //Set to false to being. Changed to true if you lose
 
 //SCORE
 int score = 0;
-textSize(32);
-text("SCORE:", 500, 30); 
-text(score, 500,60);
-
-
 
 //SETUP
 void setup() {
@@ -102,6 +97,7 @@ void draw() {
         foodY = int(floor(random(height/10-1)+1)*10);
         //Increase the snake size
         snakeSize++;
+        score++;
   }  
   
      
@@ -127,6 +123,11 @@ void keyPressed() {
     speedX=0;
   }
  }
+ 
+ //DISPLAY THE SCORE
+ textSize(32);
+ text("SCORE:", 500, 30); 
+ text(score, 500,60);
  
  //RESTART THE GAME AFTER LOSS
  void mouseReleased() {

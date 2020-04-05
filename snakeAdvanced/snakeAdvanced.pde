@@ -18,7 +18,11 @@ color foodColor = color (255,0,0); //Fill colour for the food
 //LOSE CHECK
 boolean lose = false; //Set to false to being. Changed to true if you lose
 
-
+//SCORE
+int score = 0;
+textSize(32);
+text("SCORE:", 10, 30); 
+text(score, 10,60);
 
 
 
